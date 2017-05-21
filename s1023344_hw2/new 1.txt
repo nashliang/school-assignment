@@ -1,0 +1,34 @@
+<!--表單-->
+	<form method="post" action="s1023344_HW2.php">
+	  <h2>Sign Up</h2>
+	
+	  <p>Name:
+	  <input name = "name" type = "text" size = "25" required>
+	
+	  <p>ID Card:
+	  <input name = "id_card" type = "text" size = "23" pattern="[A-Z](1|2)\d{8}" placeholder="A#########" required>
+
+	  <p>Cell Phone:
+	  <input name = "phone" type = "text" size = "25" pattern="09\d{8}" placeholder="09########" required>
+	
+	  <p>Email:
+	  <input name = "email" type = "text" size = "25" required>
+
+	  <p><strong>Age:</strong>    <!--單選-->
+	   <label><input name = "age" type = "radio" value = "15~20">15~20</label>
+	   <label><input name = "age" type = "radio" value = "21~30" checked> 21~30</label>
+	   <label><input name = "age" type = "radio" value = "31~40">31~40</label>
+	   <label><input name = "age" type = "radio" value = "41~50">41~50</label>
+	   <label><input name = "age" type = "radio" value = "51~">51~</label>
+	   
+	  <p><strong>How to get this information?</strong> <!--多選-->
+		<label><input name = "ways" type = "checkbox" value = "network">Network</label>
+		<label><input name = "ways" type = "checkbox" value = "tv">TV</label>
+		<label><input name = "ways" type = "checkbox" value = "magazine">Magazine</label>
+		<label><input name = "ways" type = "checkbox" value = "friend">Friends</label>
+		
+	  <p>
+		<input type = "submit" value ="Submit" >
+		<input type = "reset" value = "Clear" >
+	  </p>
+	</form>

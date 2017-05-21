@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q5</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzT3ueIcxZNKuV9e_8bF3AXLcpwXdlmM0"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>	
+    <script>    
+    $(function(){
+        //初始中心
+		    var map = new google.maps.Map(document.getElementById('map'), {
+		    center: {lat: 24.97, lng:121.27 },
+		    zoom: 14
+			});
+      
+    function draw(){  
+    	$.getJSON( "s1023344_HW5.php", function( out ) {            
+        	//var results = out.result["hw5"];
+       		$.each(out,function(i,item){
+              var No = item["No"];
+	  			    var ID = item["ID"];
+              if(ID < 100){
+                ID = "0"+ID;
+              }
+              if(ID < 10){
+                ID = "0"+ID;
+              }
+              var Image = {
+                  url: ID+".png",
+                  size: new google.maps.Size(180, 180), 
+                  origin: new google.maps.Point(0, 0),                     
+                  anchor: new google.maps.Point(19, 40),
+                  scaledSize: new google.maps.Size(180,180)
+              };
+          		var Lat = item["Lat"];
+				      var Lng = item["Lng"];
+          		var Atk = item["Atk"];
+          		var Time = item["Time"];
+          		var Def = item["Def"];
+	    			  var HP = item["HP"];              
+	    			  var now = new Date();	 
+              var special = Number(Atk)+Number(Def)+Number(HP);
+           
+	   				if ( Date.parse(now).valueOf() < Date.parse(Time).valueOf())
+	    			   	{	//標記
+        							var myCenter=new google.maps.LatLng(Lat,Lng);
+        							var marker=new google.maps.Marker({
+        							    position:myCenter,
+        							    icon : Image 
+        							});
+        							marker.setMap(map);                      
+        							//說明        							
+                      if( special > 40 ){                      
+                        var infowindow = new google.maps.InfoWindow({         
+                          content:"Atk:"+Atk+", HP:"+HP+", Def"+Def+"<p style='color:red;'>Atk+Def+HP>40</p>"
+                        });
+                      }
+                      else{
+                        var infowindow = new google.maps.InfoWindow({         
+                          content:"Atk:"+Atk+", HP:"+HP+", Def"+Def
+                        });
+                      }
+        							google.maps.event.addListener(marker, 'click', function() {
+        							    infowindow.open(map,marker);
+        							});
+	    			    }
+        	}); //$each()_end                    
+    	});//$getjson()_end      
+    }//draw_end
+      draw();
+      setInterval( draw ,5000); 
+   	});//$()_end    
+    </script>
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+</style>
+
+<body>
+    <div id="map">
+    	
+    </div>
+</body>
+</html>

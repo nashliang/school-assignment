@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Stock</title>
+
+      <link href="css/chart.css" type="text/css" rel="stylesheet" />
+      <script src="//d3js.org/d3.v3.min.js"></script>
+      <script src="js/chart.js"></script>
+      <script src="js/chart2.js"></script>
+      <script src="js/swap_page.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="//code.jquery.com/jquery-2.2.4.min.js"></script> 
+
+      <!-- 剛開始進來先load好主畫面-->
+      <script>
+      window.addEventListener('load', swap_page('home_page'), false);
+      </script>
+
+   </head>
+   <body>
+    
+      <!--==============================header=================================-->
+      <div id="index">
+            <header id="header">
+                <h1><a href="index_final.html">Stock<span>Trend Analysis</span></a></h1>
+                <nav>
+                  <ul class="sf-menu" >
+                    <li class="current"><a href="javascript: swap_page('home_page');">Home</a>
+                    </li>
+                    <li><a href="javascript: swap_page('chart_page');">Chart</a></li>
+                    <li><a href="javascript: swap_page('contacts_page');">Contacts</a></li>
+                  </ul>
+                </nav>
+              </header>
+
+
+<!--=======content================================-->
+
+<section id="content">
+</section>
+
+<!--=======footer=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+    <div class="grid_12">
+      <div class="copyright">
+        <pre>© <span id="copyright-year"></span> |  Privacy Policy</pre>
+      </div>
+  </div>
+</footer>
+
+
+        </div>
+
+   </body>
+</html>

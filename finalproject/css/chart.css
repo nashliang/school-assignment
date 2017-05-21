@@ -1,0 +1,53 @@
+
+
+svg{
+  background-color: #CCDDFF ;
+  //margin:50px;
+}
+text{
+
+  font: 12px sans-serif;
+}
+.y.axis text {
+  font: 12px sans-serif;
+}
+.x.axis text {
+  font: 12px sans-serif;
+  font-weight: bolder;
+  transform: rotate(30deg);
+  //writing-mode: vertical-lr;
+
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis path {
+  opacity: 0.4;
+}
+
+.axis .minor line {
+  opacity: 0.1;
+}
+
+.bar {
+  fill: steelblue;
+  fill-opacity: .6;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.x.axis text:hover {
+  fill: brown;
+}

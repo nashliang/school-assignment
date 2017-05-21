@@ -1,0 +1,70 @@
+/*通過w3c css*/
+html, body {
+	color: #333333; line-height:150%; background:transparent; margin:0; padding:0;
+        
+}
+.main img{
+	width:100%;
+	height:100%;
+	  -webkit-filter: grayscale(100%);/*濾鏡*/
+}
+/*導覽列*/
+#house{
+    position:absolute;
+    z-index:10;
+	left:1.5%;
+	top:2%;
+}
+#btnLogin{
+	position:absolute;
+    z-index:10;
+	top:2%;
+	left:95%;
+}
+
+
+/*大圖上的字*/
+.main_word{  
+    font-weight:900;
+    font-size: 3rem;
+    color:#fff;
+    line-height: 1.2;
+    margin: 0;
+    position:absolute;
+    top:250px;
+    left:100px;
+}
+
+
+#mask {
+	width:100%;
+	height: 100%;
+	background-color: #ccc;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	position:absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+/*彈出框*/
+#login {
+	background-color:#fff;
+	width:550px;
+	height:350px;
+	padding-left:20px;
+	position: fixed;
+	z-index: 1001;
+}
+/*叉叉圖案*/
+#close {
+	background-color:#000;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 5px;	
+	z-index: 1002;	
+}

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stretch</title>
+		<style type="text/css">
+		#ad{display: none;position:relative;overflow: hidden;}
+		#pic{ width: 1000px;}
+		#Spic{width: 1000px; display: none;}
+		</style>
+</head>
+<body>
+	<div id="ad">
+		<img id="pic" src="b.jpg" height="500px">
+		<img id="Spic" src="sb.jpg" height="100px">
+		<!--height沒寫這會抓到圖片原始尺寸，不是我設的大小-->
+	</div>
+
+	<script type="text/javascript">
+		var oAd=document.getElementById('ad');
+		var oPic=document.getElementById('pic');
+		var h=0;
+		var step=5;
+		var maxH=oPic.height;
+		var minH=document.getElementById('Spic').height;
+
+		function Down(){			
+			if(h<maxH){							
+				h+=step;
+				console.log(h);
+				oAd.style.height=h+"px";
+				oAd.style.display="block";
+				setTimeout(Down,10);
+			}
+			else{
+				setTimeout(Up,3000);
+			}
+
+		}
+
+		function Up(){
+			if(h>minH){
+				h-=step;
+				oAd.style.height=h+"px";
+				setTimeout(Up,10);
+			}
+			else{
+				oPic.style.display="none";
+				document.getElementById('Spic').style.display="block";
+			}
+		}
+
+		setTimeout(Down,2000);
+	</script>
+</body>
+</html>
